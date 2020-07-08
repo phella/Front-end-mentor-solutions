@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Frontend Mentor | Article preview component</title>
+  <script>
+	let share = false;
+	function toggleShare(){
+		
+		if(!share){
+			share = true;
+			document.getElementById("shareDiv").style.backgroundColor = "hsl(217, 19%, 35%)";
+			document.getElementById("modal").style.visibility = "visible";
+			document.getElementById("triangle-down").style.display = "block";
+			document.getElementById('modal').className ='modal-animation';
+			document.getElementById('triangle-down').className ='modal-animation2';
+		}else{
+			share = false;
+			document.getElementById("shareDiv").style.backgroundColor = "hsl(210, 46%, 95%)";
+			document.getElementById("modal").style.visibility = "hidden";
+			document.getElementById("modal").classList.remove("modal-animation");
+			document.getElementById("triangle-down").style.display = "none";
+		}
+	}
+  </script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+	<div class="container">
+		<div id="drawer"> </div>
+	
+	<div id="details">
+		<h2 style="color: hsl(217, 19%, 35%)">
+			Shift the overall look and feel by adding these wonderful 
+			touches to furniture in your home
+		</h2>
+		<p style="color: hsl(214, 17%, 51%); font-family: myFirstFont;">
+			Ever been in a room and felt like something was missing? Perhaps 
+			it felt slightly bare and uninviting. I’ve got some simple tips 
+			to help you make any room feel complete.
+		</p>
+		<div>
+			<img src = "./images/avatar-michelle.jpg" style= "width:35px;border-radius:50%; ">
+			<p id="name"> Michelle Appleton </p>
+			<p style = "display: inline-block;margin:0px; font-family: myFirstFont; text-indent: -10.5em;color: hsl(214,17%,51%)"> 28 Jun 2020 </p>
+		</div>
+
+	</div>
+		<div id="modal" > 
+			<p id="logo"> S H A R E </p>
+			<img class="icon" src="images/icon-facebook.svg">
+			<img class="icon" src="images/icon-twitter.svg">
+			<img class="icon" src="images/icon-pinterest.svg">
+		</div>
+		<div id="triangle-down"></div>
+		<div id = "shareDiv"  onclick="toggleShare()">
+			<img id="profile" src="images/icon-share.svg" style="width:20px;margin:10px;">
+		</div>
+  </div>
+</body>
+</html>
