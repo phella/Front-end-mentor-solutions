@@ -1,0 +1,167 @@
+@font-face {
+    font-family: mainFont;
+    src: url(./fonts/Raleway-Regular.ttf);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 60%;
+}
+
+html,body{
+    height: 100%;
+    margin: 0;
+    font-family: mainFont;
+    font-size: 13px;
+}
+
+body{
+    background-image: url("images/bg-desktop.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.cell{
+    position: relative;
+    color: hsl(243, 100%, 93%);
+    background-color:  hsl(228, 56%, 26%);
+    height : 90px;
+    margin: 15px;
+    padding : 30px 30px 40px 30px;
+    border-radius: 7px;
+}
+
+.progress-bar-container{
+    background-color: hsl(229, 57%, 11%);
+    width: 100%;
+    border-radius: 7px 7px 7px 7px;
+    height : 15px;
+    margin : 15px 0 10px 0;
+}
+
+.progress-bar{
+    background: linear-gradient(90deg, hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    height: 15px;
+    border : solid black;
+    box-sizing: border-box;
+    border-radius: 7px 7px 7px 7px;
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    animation-name: loading;
+   animation-duration: 4s;
+   animation-iteration-count: 1;
+}
+
+@keyframes loading {
+    from {width: 0%;}
+    to {width: 60%;}
+  }
+
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 1px;
+    height: 9px;
+    width: 9px;
+    z-index:1;
+}
+
+.anchor{
+    position: absolute;
+    height: 60px;
+    width: 120px;
+    border-radius: 7px;
+    top: -40px;
+    right: 10px;
+    background:white;
+    color: black;
+    text-align: center;
+}
+
+.info{
+    font-size: 26px;
+    font-weight: bolder;
+    position: relative;
+    top: 20%;
+}
+
+.info2{
+    position: relative;
+    top: 20%;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    float: right;
+    border-left: 10px solid transparent;
+    top:55px;
+    position: relative;
+    border-top: 20px solid white;
+}
+
+#first{
+    height:110px;
+    width: 200px;
+    border-top-right-radius: 40%;
+}
+
+.icon{
+    margin:25px 5px 5px;
+    display: inline-block;
+    padding: 5px;
+    width:30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: hsl(229, 57%, 11%);
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.im{
+    height: 60%;
+    padding-top: 20%;
+    vertical-align: middle;
+}
+
+#second{
+    text-align: center;
+    width:300px;
+}
+
+@media only screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    #first{
+        width: 70%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #second{
+        width: 70%;
+        margin: auto;
+        margin-top: 0px;
+    }
+
+    .triangle{
+        display: none;
+    }
+
+    .anchor{
+        right:30%;
+        top: 80%;
+    }
+
+    body{
+        background-image: url("./images/bg-mobile.png");
+    }
+}
