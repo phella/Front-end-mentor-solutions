@@ -1,178 +1,167 @@
-	@font-face {
-		font-family: myFirstFont;
-		src: url(./static/Manrope-Medium.ttf);
-	}
-	
-	@font-face {
-		font-family: mySecondFont;
-		src: url(./static/Manrope-Bold.ttf);
-	}
-  
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-	
-	body{
-		background-color:  hsl(210, 46%, 95%);
-		font-size: 13px;
-		font-family: myFirstFont;
-	}
+@font-face {
+    font-family: mainFont;
+    src: url(./fonts/Raleway-Regular.ttf);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 60%;
+}
+
+html,body{
+    height: 100%;
+    margin: 0;
+    font-family: mainFont;
+    font-size: 13px;
+}
+
+body{
+    background-image: url("images/bg-desktop.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.cell{
+    position: relative;
+    color: hsl(243, 100%, 93%);
+    background-color:  hsl(228, 56%, 26%);
+    height : 90px;
+    margin: 15px;
+    padding : 30px 30px 40px 30px;
+    border-radius: 7px;
+}
+
+.progress-bar-container{
+    background-color: hsl(229, 57%, 11%);
+    width: 100%;
+    border-radius: 7px 7px 7px 7px;
+    height : 15px;
+    margin : 15px 0 10px 0;
+}
+
+.progress-bar{
+    background: linear-gradient(90deg, hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    height: 15px;
+    border : solid black;
+    box-sizing: border-box;
+    border-radius: 7px 7px 7px 7px;
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    animation-name: loading;
+   animation-duration: 4s;
+   animation-iteration-count: 1;
+}
+
+@keyframes loading {
+    from {width: 0%;}
+    to {width: 60%;}
+  }
+
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 1px;
+    height: 9px;
+    width: 9px;
+    z-index:1;
+}
+
+.anchor{
+    position: absolute;
+    height: 60px;
+    width: 120px;
+    border-radius: 7px;
+    top: -40px;
+    right: 10px;
+    background:white;
+    color: black;
+    text-align: center;
+}
+
+.info{
+    font-size: 26px;
+    font-weight: bolder;
+    position: relative;
+    top: 20%;
+}
+
+.info2{
+    position: relative;
+    top: 20%;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    float: right;
+    border-left: 10px solid transparent;
+    top:55px;
+    position: relative;
+    border-top: 20px solid white;
+}
+
+#first{
+    height:110px;
+    width: 200px;
+    border-top-right-radius: 40%;
+}
+
+.icon{
+    margin:25px 5px 5px;
+    display: inline-block;
+    padding: 5px;
+    width:30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: hsl(229, 57%, 11%);
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.im{
+    height: 60%;
+    padding-top: 20%;
+    vertical-align: middle;
+}
+
+#second{
+    text-align: center;
+    width:300px;
+}
+
+@media only screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+        height: 100%;
+    }
     
-    #drawer{
-        display:table-cell;
-        width:40%;
-        height:100%;
-        background-image: url('images/drawers.jpg');
-        border-radius:15px 0 0 15px;
-        background-size: cover;
-        background-position: center;
+    #first{
+        width: 70%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #second{
+        width: 70%;
+        margin: auto;
+        margin-top: 0px;
     }
 
-	.container{
-        box-shadow: 0 8px 6px -6px black;
-		border-radius : 15px;
-		height: auto;
-		width : 50%;
-		display : inline-block;
-		background-color : white;
-		position : absolute;
-		top:25%;
-		left:25%;
-	}
-	
-	.icon {
-		margin: 3px;
-		margin-left:12px;
-		text-align:center;
-		cursor: pointer;
-	}
-    #modal{
-        display:flex;
-        visibility: hidden;
-        position: absolute;
-        right: -80px;
-        bottom:70px;
-        background-color:hsl(217, 19%, 35%);
-        height:25px;
-        padding:10px;
-        border-radius:10px;
-        width:200px;
-        display:flex;
-        align-items:center;
-    }
-    
-	#triangle-down {
-		position:absolute;
-        bottom:50px;
-        display:none;
-		right: 42px;
-		width: 0;
-		height: 0;
-		border-left: 10px solid transparent;
-		border-right: 10px solid transparent;
-		border-top: 20px solid hsl(217, 19%, 35%);
-	}
-    
-    
-    #details{
-        display:table-cell;
-        width:50%;
-        vertical-align:top;
-        font-family: mySecondFont;
-        padding:4%;
+    .triangle{
+        display: none;
     }
 
-    #logo{
-        vertical-align:super;
-        margin:auto;
-        cursor:pointer;
-        color:white;
-    }
-    #shareDiv{
-        position: absolute;
-        bottom: 6px;
-        right : 30px;
-        background-color: hsl(210, 46%, 95%);
-        border-radius:50%;
-        height:40px;
-        width:40px;
-        cursor:pointer;
+    .anchor{
+        right:30%;
+        top: 80%;
     }
 
-    #name{
-        display: inline-block;
-        margin:0px 20px 0px;
-        vertical-align:top; 
+    body{
+        background-image: url("./images/bg-mobile.png");
     }
-
-    
-    .modal-animation{
-        animation-name: cssAnimation;
-        animation-duration:3s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-    }
-
-    .modal-animation2{
-        animation-name: cssAnimation2;
-        animation-duration:3s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes cssAnimation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-    
-      @keyframes cssAnimation2 {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-
-
-	@media only screen and (max-width: 800px) {
-		#drawer{
-            display: block;
-            width : 100%;
-            height: 250px;
-            border-radius:15px 15px 0 0;
-        }
-        
-        .container{
-            width:80%;
-            margin:auto;
-            left: 10%;
-            padding-bottom: 0px;
-        }
-
-        #modal{
-            
-            position: relative;
-            width:100%;
-            right: 0;
-            bottom: 0;
-            padding: 10px 0 10px 0;
-            border-radius: 0 0 15px 15px;
-        }
-        
-        #logo{
-            margin: 20px;
-        }
-
-
-        #triangle-down {
-            visibility: hidden;
-        }
-	}
+}

@@ -5,61 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Frontend Mentor | Article preview component</title>
-  <script>
-	let share = false;
-	function toggleShare(){
-		
-		if(!share){
-			share = true;
-			document.getElementById("shareDiv").style.backgroundColor = "hsl(217, 19%, 35%)";
-			document.getElementById("modal").style.visibility = "visible";
-			document.getElementById("triangle-down").style.display = "block";
-			document.getElementById('modal').className ='modal-animation';
-			document.getElementById('triangle-down').className ='modal-animation2';
-		}else{
-			share = false;
-			document.getElementById("shareDiv").style.backgroundColor = "hsl(210, 46%, 95%)";
-			document.getElementById("modal").style.visibility = "hidden";
-			document.getElementById("modal").classList.remove("modal-animation");
-			document.getElementById("triangle-down").style.display = "none";
-		}
-	}
-  </script>
+  <link rel="stylesheet" href="styles.css">  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<div id="drawer"> </div>
-	
-	<div id="details">
-		<h2 style="color: hsl(217, 19%, 35%)">
-			Shift the overall look and feel by adding these wonderful 
-			touches to furniture in your home
-		</h2>
-		<p style="color: hsl(214, 17%, 51%); font-family: myFirstFont;">
-			Ever been in a room and felt like something was missing? Perhaps 
-			it felt slightly bare and uninviting. I’ve got some simple tips 
-			to help you make any room feel complete.
-		</p>
-		<div>
-			<img src = "./images/avatar-michelle.jpg" alt="avatar-image" style= "width:35px;border-radius:50%; ">
-			<p id="name"> Michelle Appleton </p>
-			<p style = "display: inline-block;margin:0px; font-family: myFirstFont; text-indent: -10.5em;color: hsl(214,17%,51%)"> 28 Jun 2020 </p>
-		</div>
+  <div class="container">
+    <div id="first" class="cell" >
+      <img src="images/logo.svg" style="width:50%;display: block;">
+      <div class="icon">
+        <img class="im" src="images/icon-document.svg">
+      </div>
+      <div class="icon">
+        <img class="im" src="images/icon-folder.svg">
+      </div>
+      <div class="icon">
+        <img class="im" src="images/icon-upload.svg">
+      </div>
+    </div>
+    <div class="cell" id="second" >
+      <span> You’ve used <b>815 GB</b> of your storage </span>
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="circle">
 
-	</div>
-		<div id="modal" > 
-			<p id="logo"> S H A R E </p>
-			<img class="icon" alt="facebook" src="images/icon-facebook.svg">
-			<img class="icon" alt="twitter" src="images/icon-twitter.svg">
-			<img class="icon" alt="pinterest"src="images/icon-pinterest.svg">
-		</div>
-		<div id="triangle-down"></div>
-		<div id = "shareDiv"  onclick="toggleShare()">
-			<img id="profile" src="images/icon-share.svg" alt="share" style="width:20px;margin:10px;">
-		</div>
+          </div>
+        </div>
+      </div>
+      <span style="float: left;"> 0 GB   </span>
+      <span style="float: right;">1000 GB</span>
+      <div class="anchor">
+        <span class="info">185 </span>
+        <span class="info2"> GB Left </span> 
+        <div class="triangle">
+
+        </div>
+      </div>
+    </div>
   </div>
+ 
+
 </body>
 </html>
